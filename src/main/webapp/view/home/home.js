@@ -1,5 +1,6 @@
 var goYuanGong = "/LBTravel/a01/goA01.do";
 var goKeHu = "/LBTravel/keHu/goKeHu.do";
+var goLvXing = "/LBTravel/lvXing/goLvXing.do";
 var goPassword = "/LBTravel/goPassword.do";
 
 var allMenu = {data: [
@@ -8,7 +9,7 @@ var allMenu = {data: [
         {id: '2', text: '客户管理', icon: 'icon-leaf', url: '', menus: [
                 {id: '201', text: '客户管理', icon: 'icon-glass', url: goKeHu}]},
         {id: '3', text: '业务管理', icon: 'icon-leaf', url: '', menus: [
-                {id: '301', text: '旅行信息', icon: 'icon-glass', url: goRuKu},
+                {id: '301', text: '旅行信息', icon: 'icon-glass', url: goLvXing},
                 {id: '302', text: '统计分析', icon: 'icon-glass', url: goTongJi}]},
         {id: '9', text: '系统管理', icon: 'icon-cog', url: '', menus: [
                 {id: '901', text: '修改密码', icon: 'icon-glass', url: goPassword}]}]};
