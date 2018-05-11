@@ -6,7 +6,9 @@
 package com.lb.lbtravel.service.impl;
 
 import com.lb.lbtravel.dao.LvXingDao;
+import com.lb.lbtravel.domain.DiJieShe;
 import com.lb.lbtravel.domain.LvXing;
+import com.lb.lbtravel.domain.XianLu;
 import com.lb.lbtravel.service.LvXingService;
 import java.util.HashMap;
 import java.util.List;
@@ -73,6 +75,16 @@ public class LvXingServiceImpl implements LvXingService {
             hql += " and state = " + map.get("state");
         }
         return lvXingDao.getPageList(hql, null, 1, 20);
+    }
+
+    @Override
+    public List<XianLu> getAllXianLus() {
+        return lvXingDao.getResult("from XianLu xianLu", null);
+    }
+
+    @Override
+    public List<DiJieShe> getAllDiJieShes() {
+        return lvXingDao.getResult("from DiJieShe diJieShe", null);
     }
 
 }

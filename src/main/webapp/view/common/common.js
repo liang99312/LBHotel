@@ -1,62 +1,27 @@
-var lb_moKuais = [{id: '503', mc: '入库管理'}, {id: '504', mc: '领料管理'}, {id: '505', mc: '发货管理'}, {id: '506', mc: '损耗管理'}, {id: '507', mc: '还库管理'}, {id: '509', mc: '统计分析'}];
 var lb_allMoKuais = [
-    {id: '101', mc: '部门管理'}, {id: '102', mc: '人员管理'}, 
-    {id: '201', mc: '客户管理'}, 
-    {id: '301', mc: '供应商管理'}, 
-    {id: '401', mc: '旅行管理'}, {id: '402', mc: '物资类别'}, {id: '403', mc: '物资字典'}, 
-    {id: '503', mc: '入库管理'}, {id: '504', mc: '领料管理'}, {id: '505', mc: '发货管理'}, {id: '506', mc: '损耗管理'}, {id: '507', mc: '还库管理'}, {id: '508', mc: '还库管理'}, {id: '509', mc: '统计分析'},
-    {id: '701', mc: '字典类别'}, {id: '702', mc: '企业字典'}, 
-    {id: '801', mc: '报表管理'}, 
+    {id: '101', mc: '人员管理'},
+    {id: '201', mc: '客户管理'},
+    {id: '301', mc: '旅行信息'}, {id: '302', mc: '统计分析'},
     {id: '901', mc: '修改密码'}];
 var lb_allA01s;
-var lb_baoBiaos;
-var lb_qiYes;
-var lb_ziDianFenLeis;
-var lb_wuZiLeiBies;
-var lb_ziDian4fl;
-var lb_wuZiZiDians;
-var lb_cangKus;
 var lb_keHus;
-var lb_gongYingShangs;
+var lb_xianLus;
+var lb_diJieShes;
 
 function getAllA01s(func) {
     hajax("/LBTravel/a01/getAllA01s.do", {}, "lb_allA01s", func);
-}
-
-function getBaoBiaosByMk(mkdm, func) {
-    hajax("/LBTravel/baoBiao/getBaoBiaosByMk.do", {mkdm: mkdm}, "lb_baoBiaos", func);
-}
-
-function getQiYes(func) {
-    hajax("/LBTravel/qiYe/getAllQiYes.do", {}, "lb_qiYes", func);
-}
-
-function getZiDianFenLeis(func){
-    hajax("/LBTravel/ziDianFenLei/getAllZiDianFenLeis.do", {}, "lb_ziDianFenLeis", func);
-}
-
-function getWuZiLeiBies(func){
-    hajax("/LBTravel/wuZiLeiBie/getAllWuZiLeiBies.do", {}, "lb_wuZiLeiBies", func);
-}
-
-function getZiDian4FenLei(id,func){
-    hajax("/LBTravel/ziDian/getAllZiDians4fl.do", {id:0,qy_id:0,zdfl_id:id}, "lb_ziDian4fl", func);
-}
-
-function getWuZiZiDians(func){
-    hajax("/LBTravel/wuZiZiDian/getAllWuZiZiDians.do", {}, "lb_wuZiZiDians", func);
-}
-
-function getCangKus(func){
-    hajax("/LBTravel/cangKu/getAllCangKus.do", {}, "lb_cangKus", func);
 }
 
 function getKeHus(func){
     hajax("/LBTravel/keHu/getAllKeHus.do", {}, "lb_keHus", func);
 }
 
-function getGongYingShangs(func){
-    hajax("/LBTravel/gongYingShang/getAllGongYingShangs.do", {}, "lb_gongYingShangs", func);
+function getXianLus(func){
+    hajax("/LBTravel/lvXing/getAllXianLus.do", {}, "lb_xianLus", func);
+}
+
+function getDiJieShes(func){
+    hajax("/LBTravel/lvXing/getAllDiJieShes.do", {}, "lb_diJieShes", func);
 }
 
 function findCode(list, id) {

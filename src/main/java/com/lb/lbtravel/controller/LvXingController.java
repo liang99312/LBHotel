@@ -5,6 +5,7 @@
  */
 package com.lb.lbtravel.controller;
 
+import com.lb.lbtravel.domain.DiJieShe;
 import com.lb.lbtravel.domain.Page;
 import javax.annotation.Resource;
 
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.lb.lbtravel.domain.LvXing;
+import com.lb.lbtravel.domain.XianLu;
 import com.lb.lbtravel.service.LvXingService;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -135,6 +137,44 @@ public class LvXingController extends BaseController {
         map.put("pageSize", model.getPageSize());
         model.setList(this.lvXingServiceImpl.queryLvXingsByPage(map));
         return model;
+    }
+    
+    @RequestMapping(value = "getAllXianLus.do", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    @ResponseBody
+    public Map<String, Object> getAllXianLus() {
+        if (!existsUser()) {
+            return notLoginResult();
+        }
+        Map<String, Object> map = new HashMap<String, Object>();
+        try {
+            List<XianLu> xianLuList = new ArrayList<XianLu>();
+            xianLuList = lvXingServiceImpl.getAllXianLus();
+            map.put("result", 0);
+            map.put("sz", xianLuList);
+        } catch (Exception e) {
+            map.put("result", -1);
+            map.put("msg", e.getMessage());
+        }
+        return map;
+    }
+    
+    @RequestMapping(value = "getAllDiJieShes.do", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    @ResponseBody
+    public Map<String, Object> getAllDiJieShes() {
+        if (!existsUser()) {
+            return notLoginResult();
+        }
+        Map<String, Object> map = new HashMap<String, Object>();
+        try {
+            List<DiJieShe> diJieSheList = new ArrayList<DiJieShe>();
+            diJieSheList = lvXingServiceImpl.getAllDiJieShes();
+            map.put("result", 0);
+            map.put("sz", diJieSheList);
+        } catch (Exception e) {
+            map.put("result", -1);
+            map.put("msg", e.getMessage());
+        }
+        return map;
     }
 
 }
