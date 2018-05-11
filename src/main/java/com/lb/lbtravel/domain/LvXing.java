@@ -18,7 +18,7 @@ public class LvXing {
     private Integer kh_id;
     private String khmc;
     private Date ctsj;//参团时间
-    private String ctlx;//参团路线
+    private String ctxl;//参团线路
     private String ctxz;//参团性质
     private String ctdjs;//地接社
     private Float ctfy;//费用
@@ -28,7 +28,7 @@ public class LvXing {
     private Integer a01_id;
     private String a01mc;
     private String bz;
-    private Integer state;
+    private Integer state = 0;
 
     public LvXing() {
     }
@@ -65,12 +65,12 @@ public class LvXing {
         this.ctsj = ctsj;
     }
 
-    public String getCtlx() {
-        return ctlx;
+    public String getCtxl() {
+        return ctxl;
     }
 
-    public void setCtlx(String ctlx) {
-        this.ctlx = ctlx;
+    public void setCtxl(String ctxl) {
+        this.ctxl = ctxl;
     }
 
     public String getCtxz() {

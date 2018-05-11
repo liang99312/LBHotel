@@ -26,3 +26,37 @@ CREATE TABLE `travel`.`kehu` (
   `bz` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `state` int(11) DEFAULT 0,
   PRIMARY KEY (`id`))ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `travel`.`xianlu` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `mc` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `dm` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `bz` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `state` int(11) DEFAULT 0,
+  PRIMARY KEY (`id`))ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `travel`.`dijieshe` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `mc` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `dm` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `bz` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `state` int(11) DEFAULT 0,
+  PRIMARY KEY (`id`))ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `travel`.`lvxing` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `kh_id` INT NOT NULL,
+  `khmc` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `ctsj` datetime DEFAULT NULL,
+  `ctlx` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `ctxz` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `ctdjs` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `ctfy` FLOAT(7,2) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `ctlr` FLOAT(7,2) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `ctfj` FLOAT(7,2) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `ctbx` FLOAT(7,2) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `a01_id` INT,
+  `a01mc` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `bz` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `state` int(11) DEFAULT 0,
+  PRIMARY KEY (`id`))ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
