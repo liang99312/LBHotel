@@ -31,7 +31,6 @@ function selectKeHu(json) {
     $("#inpDh").val(editKeHu.dh);
 }
 
-
 function jxLvXing(json) {
     $("#data_table_body tr").remove();
     lvXings = [];
@@ -70,10 +69,17 @@ function addLvXing() {
     optFlag = 1;
     $("#lvXingModel_title").html("新增参团信息");
     $("#inpMc").val("");
-    $("#inpDm").val("");
-    $("#inpDz").val("");
-    $("#inpLxr").val("");
-    $("#inpLxdh").val("");
+    $("#inpSfz").val("");
+    $("#inpDh").val("");
+    $("#inpCtsj").val("");
+    $("#inpCtxl").val("");
+    $("#inpCtlx").val("");
+    $("#inpCtdjs").val("");
+    $("#inpCtfy").val("0");
+    $("#inpCtlr").val("0");
+    $("#inpA01").val("");
+    $("#inpCtfj").val("0");
+    $("#inpCtbx").val("0");
     $("#inpBz").val("");
     $("#lvXingModal").modal("show");
 }
@@ -87,11 +93,18 @@ function editLvXing(index) {
     var lvXing = lvXings[index];
     editIndex = index;
     $("#lvXingModel_title").html("修改参团信息");
-    $("#inpMc").val(lvXing.mc);
-    $("#inpDm").val(lvXing.dm);
-    $("#inpDz").val(lvXing.dz);
-    $("#inpLxr").val(lvXing.lxr);
-    $("#inpLxdh").val(lvXing.lxdh);
+    $("#inpMc").val(lvXing.khmc);
+    $("#inpSfz").val(lvXing.sfz);
+    $("#inpDh").val(lvXing.dh);
+    $("#inpCtsj").val(lvXing.ctsj);
+    $("#inpCtxl").val(lvXing.ctxl);
+    $("#inpCtlx").val(lvXing.ctlx);
+    $("#inpCtdjs").val(lvXing.ctdjs);
+    $("#inpCtfy").val(lvXing.ctfy);
+    $("#inpCtlr").val(lvXing.ctlr);
+    $("#inpA01").val(lvXing.a01mc);
+    $("#inpCtfj").val(lvXing.ctfj);
+    $("#inpCtbx").val(lvXing.ctbx);
     $("#inpBz").val(lvXing.bz);
     $("#lvXingModal").modal("show");
 }
@@ -108,11 +121,18 @@ function saveLvXing() {
     } else if (optFlag === 1) {
         url = "/LBTravel/lvXing/saveLvXing.do";
     }
-    lvXing.mc = $("#inpMc").val();
-    lvXing.dm = $("#inpDm").val();
-    lvXing.dz = $("#inpDz").val();
-    lvXing.lxr = $("#inpLxr").val();
-    lvXing.lxdh = $("#inpLxdh").val();
+    lvXing.khmc = $("#inpMc").val();
+    lvXing.sfz = $("#inpSfz").val();
+    lvXing.dh = $("#inpDh").val();
+    lvXing.ctsj = $("#inpCtsj").val();
+    lvXing.ctxl = $("#inpCtxl").val();
+    lvXing.ctlx = $("#inpCtlx").val();
+    lvXing.ctdjs = $("#inpCtdjs").val();
+    lvXing.ctfy = $("#inpCtfy").val();
+    lvXing.ctlr = $("#inpCtlr").val();
+    lvXing.a01mc = $("#inpA01").val();
+    lvXing.ctfj = $("#inpCtfj").val();
+    lvXing.ctbx = $("#inpCtbx").val();
     lvXing.bz = $("#inpBz").val();
     $.ajax({
         url: url,
