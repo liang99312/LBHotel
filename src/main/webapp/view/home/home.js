@@ -1,6 +1,7 @@
 var goYuanGong = "/LBTravel/a01/goA01.do";
 var goKeHu = "/LBTravel/keHu/goKeHu.do";
 var goLvXing = "/LBTravel/lvXing/goLvXing.do";
+var goTongJi = "/LBTravel/lvXingTongJi/goLvXingTongJi.do";
 var goPassword = "/LBTravel/goPassword.do";
 
 var allMenu = {data: [

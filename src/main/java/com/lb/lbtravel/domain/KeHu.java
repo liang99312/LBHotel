@@ -15,9 +15,10 @@ public class KeHu {
     private Integer id;
     private String mc;
     private String dm;
-    private String dz;
-    private String lxr;
-    private String lxdh;
+    private String xb;
+    private Integer nl = 1;
+    private String dh;
+    private String sfz;
     private String bz;
     private Integer state;
 
@@ -48,28 +49,36 @@ public class KeHu {
         this.dm = dm;
     }
 
-    public String getDz() {
-        return dz;
+    public String getXb() {
+        return xb;
     }
 
-    public void setDz(String dz) {
-        this.dz = dz;
+    public void setXb(String xb) {
+        this.xb = xb;
     }
 
-    public String getLxr() {
-        return lxr;
+    public Integer getNl() {
+        return nl;
     }
 
-    public void setLxr(String lxr) {
-        this.lxr = lxr;
+    public void setNl(Integer nl) {
+        this.nl = nl;
     }
 
-    public String getLxdh() {
-        return lxdh;
+    public String getDh() {
+        return dh;
     }
 
-    public void setLxdh(String lxdh) {
-        this.lxdh = lxdh;
+    public void setDh(String dh) {
+        this.dh = dh;
+    }
+
+    public String getSfz() {
+        return sfz;
+    }
+
+    public void setSfz(String sfz) {
+        this.sfz = sfz;
     }
 
     public String getBz() {

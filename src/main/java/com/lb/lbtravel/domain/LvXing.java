@@ -16,7 +16,9 @@ public class LvXing {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private Integer kh_id;
-    private String khmc;
+    private String mc;
+    private String dh;
+    private String sfz;
     private Date ctsj;//参团时间
     private String ctxl;//参团线路
     private String ctxz;//参团性质
@@ -49,12 +51,28 @@ public class LvXing {
         this.kh_id = kh_id;
     }
 
-    public String getKhmc() {
-        return khmc;
+    public String getMc() {
+        return mc;
     }
 
-    public void setKhmc(String khmc) {
-        this.khmc = khmc;
+    public void setMc(String mc) {
+        this.mc = mc;
+    }
+
+    public String getDh() {
+        return dh;
+    }
+
+    public void setDh(String dh) {
+        this.dh = dh;
+    }
+
+    public String getSfz() {
+        return sfz;
+    }
+
+    public void setSfz(String sfz) {
+        this.sfz = sfz;
     }
 
     public Date getCtsj() {

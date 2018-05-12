@@ -69,6 +69,10 @@ public class LoginController extends BaseController {
             if (!existsUser()) {
                 return notLoginResult();
             }
+            A01 a01 = getDlA01();
+            if(a01 != null && a01.getState() > 8){
+                a01.setA01qx("101;201;301;302;901");
+            }
             map.put("result", 0);
             map.put("a01", getDlA01());
         } catch (Exception e) {
