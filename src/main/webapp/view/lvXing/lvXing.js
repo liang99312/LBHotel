@@ -1,9 +1,36 @@
 var lvXings;
 var optFlag = 1;
 var editIndex = -1;
+var selKeHu;
+var editKeHu;
+var editXianLu;
+var editDiJieShe;
 
 $(document).ready(function () {
+    getAllKeHus(setTrager_keHu);
+    getAllXianLus(setTrager_xianLu);
+    getAllDiJieShes(setTrager_diJieShe);
 });
+
+function setTrager_keHu() {
+    $('#selName').AutoComplete({'data': lb_keHus, 'paramName': 'selKeHu'});
+    $('#inpMc').AutoComplete({'data': lb_keHus, 'afterSelectedHandler': selectKeHu});
+}
+
+function setTrager_xianLu(){
+    $('#inpCtxl').AutoComplete({'data': lb_xianLus, 'paramName': 'editXianLu'});
+}
+
+function setTrager_diJieShe(){
+    $('#inpCtdjs').AutoComplete({'data': lb_diJieShes, 'paramName': 'editDiJieShe'});
+}
+
+function selectKeHu(json) {
+    editKeHu = json;
+    $("#inpSfz").val(editKeHu.sfz);
+    $("#inpDh").val(editKeHu.dh);
+}
+
 
 function jxLvXing(json) {
     $("#data_table_body tr").remove();

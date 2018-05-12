@@ -12,15 +12,15 @@ function getAllA01s(func) {
     hajax("/LBTravel/a01/getAllA01s.do", {}, "lb_allA01s", func);
 }
 
-function getKeHus(func){
+function getAllKeHus(func){
     hajax("/LBTravel/keHu/getAllKeHus.do", {}, "lb_keHus", func);
 }
 
-function getXianLus(func){
+function getAllXianLus(func){
     hajax("/LBTravel/lvXing/getAllXianLus.do", {}, "lb_xianLus", func);
 }
 
-function getDiJieShes(func){
+function getAllDiJieShes(func){
     hajax("/LBTravel/lvXing/getAllDiJieShes.do", {}, "lb_diJieShes", func);
 }
 
