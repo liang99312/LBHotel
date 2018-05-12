@@ -24,7 +24,7 @@ and open the template in the editor.
         <div style="float:left; width: 100%">
             <div style="width: 100%">
                 <div style="width: 100%;float:left; padding-top: 5px;">
-                    <span>&nbsp;名称：</span><input id="selName" type="text" />
+                    <span>&nbsp;姓名：</span><input id="selName" type="text" />
                     <span>&nbsp;状态：</span>
                     <select id="selState" style="width: 100px; height: 26px;line-height: 26px;">
                         <option value="-9" selected = "selected">全部</option>
@@ -34,22 +34,24 @@ and open the template in the editor.
                     <button type="button" class="btn btn-primary btn-sm" onclick="selectLvXing();" style="margin-left: 2px;">查找</button>
                 </div>
                 <div style="width: 100%;float:left; padding-top: 5px;">
-                    <button type="button" class="btn btn-primary btn-sm" onclick="addLvXing();">新增客户</button>
+                    <button type="button" class="btn btn-primary btn-sm" onclick="addLvXing();">新增参团信息</button>
                 </div>
             </div>
             <div id="list1" class="table-responsive" style="height: 678px;width:100%;padding-top: 5px;">
                 <table id="data_table" class="table table-hover">
                     <thead>
                     <tr>
-                        <th style="width:18%">名称</th>
-                        <th style="width:18%">代码</th>
-                        <th style="width:18%">联系人</th>
+                        <th style="width:18%">姓名</th>
+                        <th style="width:18%">身份证</th>
                         <th style="width:18%">电话</th>
+                        <th style="width:18%">参团时间</th>
+                        <th style="width:18%">参团线路</th>
+                        <th style="width:18%">负责人</th>
                         <th>操作</th>
                     </tr>
                     </thead>
                     <tbody id='data_table_body'>
-                    <tr><td>请查询客户记录</td></tr>
+                    <tr><td>请查询参团信息记录</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -61,29 +63,65 @@ and open the template in the editor.
                 <div class="modal-content">
                     <div class="modal-header" style="background: #ace1ff;height: 40px;border-top-left-radius: 6px;border-top-right-radius: 6px;padding:10px">
                         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <h4 class="modal-title" id="lvXingModel_title">添加客户</h4>
+                        <h4 class="modal-title" id="lvXingModel_title">添加参团信息</h4>
                     </div>
                     <div class="modal-body">
                         <div class="content">
                             <div class="form-group">
-                                <label for="inpMc">名&ensp;&ensp;&ensp;&ensp;称：</label>
+                                <label for="inpMc">姓&ensp;&ensp;&ensp;&ensp;名：</label>
                                 <input type="text" id="inpMc" />
                             </div>
                             <div class="form-group">
-                                <label for="inpDm">代&ensp;&ensp;&ensp;&ensp;码：</label>
-                                <input type="text" id="inpDm" />
+                                <label for="inpSfz">身&ensp;份&ensp;证：</label>
+                                <input type="text" id="inpSfz" />
                             </div>
                             <div class="form-group">
-                                <label for="inpLxr">联&ensp;系&ensp;人：</label>
-                                <input type="text" id="inpLxr" />
+                                <label for="inpDh">电话：</label>
+                                <input type="text" id="inpDh" />
                             </div>
                             <div class="form-group">
-                                <label for="inpLxdh">联系电话：</label>
-                                <input type="text" id="inpLxdh" />
+                                <label for="inpDh">电话：</label>
+                                <input type="text" id="inpDh" />
                             </div>
                             <div class="form-group">
-                                <label for="inpDz">地&ensp;&ensp;&ensp;&ensp;址：</label>
-                                <input type="text" id="inpDz" />
+                                <label for="inpDh">电话：</label>
+                                <input type="text" id="inpDh" />
+                            </div>
+                            <div class="form-group">
+                                <label for="inpDh">参团时间：</label>
+                                <input type="text" id="inpDh" />
+                            </div>
+                            <div class="form-group">
+                                <label for="inpDh">参团线路：</label>
+                                <input type="text" id="inpDh" />
+                            </div>
+                            <div class="form-group">
+                                <label for="inpDh">性质：</label>
+                                <input type="text" id="inpDh" />
+                            </div>
+                            <div class="form-group">
+                                <label for="inpDh">地接社：</label>
+                                <input type="text" id="inpDh" />
+                            </div>
+                            <div class="form-group">
+                                <label for="inpDh">团费：</label>
+                                <input type="text" id="inpDh" />
+                            </div>
+                            <div class="form-group">
+                                <label for="inpDh">利润：</label>
+                                <input type="text" id="inpDh" />
+                            </div>
+                            <div class="form-group">
+                                <label for="inpDh">负责人：</label>
+                                <input type="text" id="inpDh" />
+                            </div>
+                            <div class="form-group">
+                                <label for="inpDh">返佣：</label>
+                                <input type="text" id="inpDh" />
+                            </div>
+                            <div class="form-group">
+                                <label for="inpDh">保险：</label>
+                                <input type="text" id="inpDh" />
                             </div>
                             <div class="form-group">
                                 <label for="inpBz">备&ensp;&ensp;&ensp;&ensp;注：</label>

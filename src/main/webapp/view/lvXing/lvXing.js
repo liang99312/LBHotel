@@ -41,7 +41,7 @@ function selectLvXing() {
 
 function addLvXing() {
     optFlag = 1;
-    $("#lvXingModel_title").html("新增客户");
+    $("#lvXingModel_title").html("新增参团信息");
     $("#inpMc").val("");
     $("#inpDm").val("");
     $("#inpDz").val("");
@@ -55,11 +55,11 @@ function editLvXing(index) {
     optFlag = 2;
     if (lvXings[index] === undefined) {
         optFlag = 1;
-        return alert("请选择客户");
+        return alert("请选择参团信息");
     }
     var lvXing = lvXings[index];
     editIndex = index;
-    $("#lvXingModel_title").html("修改客户");
+    $("#lvXingModel_title").html("修改参团信息");
     $("#inpMc").val(lvXing.mc);
     $("#inpDm").val(lvXing.dm);
     $("#inpDz").val(lvXing.dz);
@@ -109,10 +109,10 @@ function saveLvXing() {
 
 function deleteLvXing(index) {
     if (lvXings[index] === undefined) {
-        return alert("请选择客户");
+        return alert("请选择参团信息");
     }
     var lvXing = lvXings[index];
-    if (confirm("确定删除客户：" + lvXing.mc + "?")) {
+    if (confirm("确定删除参团信息：" + lvXing.mc + "?")) {
         $.ajax({
             url: "/LBTravel/lvXing/deleteLvXing.do?id="+lvXing.id,
             contentType: "application/json",

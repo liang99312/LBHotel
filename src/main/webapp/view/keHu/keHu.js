@@ -14,7 +14,7 @@ function jxKeHu(json) {
         if(item.state === -1){
             classStr = ' class="danger"';
         }
-        var trStr = '<tr'+classStr+'><td>' + item.mc + '</td><td>' + item.dm + '</td><td>' + item.lxr + '</td><td>' + item.lxdh + '</td><td>'
+        var trStr = '<tr'+classStr+'><td>' + item.mc + '</td><td>' + item.dm + '</td><td>' + item.sfz + '</td><td>' + item.dh + '</td><td>'
                 + '<button class="btn btn-info btn-xs icon-edit" onclick="editKeHu(' + index + ' );" style="padding-top: 4px;padding-bottom: 3px;"></button>&nbsp;'
                 + '<button class="btn btn-danger btn-xs icon-remove" onclick="deleteKeHu(' + index + ' );" style="padding-top: 4px;padding-bottom: 3px;"></button></td></tr>';
         $("#data_table_body").append(trStr);
@@ -44,9 +44,10 @@ function addKeHu() {
     $("#keHuModel_title").html("新增客户");
     $("#inpMc").val("");
     $("#inpDm").val("");
-    $("#inpDz").val("");
-    $("#inpLxr").val("");
-    $("#inpLxdh").val("");
+    $("#inpSfz").val("");
+    $("#inpDh").val("");
+    $("#inpXb").val("");
+    $("#inpNl").val("0");
     $("#inpBz").val("");
     $("#keHuModal").modal("show");
 }
@@ -62,9 +63,10 @@ function editKeHu(index) {
     $("#keHuModel_title").html("修改客户");
     $("#inpMc").val(keHu.mc);
     $("#inpDm").val(keHu.dm);
-    $("#inpDz").val(keHu.dz);
-    $("#inpLxr").val(keHu.lxr);
-    $("#inpLxdh").val(keHu.lxdh);
+    $("#inpSfz").val(keHu.sfz);
+    $("#inpDh").val(keHu.dh);
+    $("#inpXb").val(keHu.xb);
+    $("#inpNl").val(keHu.nl);
     $("#inpBz").val(keHu.bz);
     $("#keHuModal").modal("show");
 }
@@ -83,9 +85,10 @@ function saveKeHu() {
     }
     keHu.mc = $("#inpMc").val();
     keHu.dm = $("#inpDm").val();
-    keHu.dz = $("#inpDz").val();
-    keHu.lxr = $("#inpLxr").val();
-    keHu.lxdh = $("#inpLxdh").val();
+    keHu.sfz = $("#inpSfz").val();
+    keHu.dh = $("#inpDh").val();
+    keHu.xb = $("#inpXb").val();
+    keHu.nl = parseInt($("#inpNl").val());
     keHu.bz = $("#inpBz").val();
     $.ajax({
         url: url,
