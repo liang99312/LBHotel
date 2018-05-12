@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.lb.lbtravel.domain.LvXing;
 import com.lb.lbtravel.domain.XianLu;
 import com.lb.lbtravel.service.LvXingService;
+import com.lb.lbtravel.util.DataUtil;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -49,6 +50,7 @@ public class LvXingController extends BaseController {
         try {
             model.setState(0);
             LvXing lvXing = lvXingServiceImpl.saveLvXing(model);
+            DataUtil.getA01sFromDb();
             map.put("result", 0);
             map.put("lvXing", lvXing);
         } catch (Exception e) {
@@ -67,6 +69,7 @@ public class LvXingController extends BaseController {
         Map<String, Object> map = new HashMap<String, Object>();
         try {
             boolean result = lvXingServiceImpl.updateLvXing(model);
+            DataUtil.getA01sFromDb();
             map.put("result", result? 0:-1);
         } catch (Exception e) {
             map.put("result", -1);

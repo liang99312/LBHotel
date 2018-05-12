@@ -2,15 +2,26 @@ var lvXings;
 var optFlag = 1;
 var editIndex = -1;
 var selKeHu;
+var editA01;
 var editKeHu;
 var editXianLu;
 var editDiJieShe;
 
 $(document).ready(function () {
+    initData();
+    $('#inpCtsj').datetimepicker({language:  'zh-CN',format: 'yyyy-mm-dd',weekStart: 7,todayBtn:  1,autoclose: 1,todayHighlight: 1,minView : 2,startView: 2,forceParse: 0,showMeridian: 1});
+});
+
+function initData(){
+    getAllA01s(setTrager_a01);
     getAllKeHus(setTrager_keHu);
     getAllXianLus(setTrager_xianLu);
     getAllDiJieShes(setTrager_diJieShe);
-});
+}
+
+function setTrager_a01() {
+    $('#inpA01').AutoComplete({'data': lb_allA01s, 'paramName': 'editA01'});
+}
 
 function setTrager_keHu() {
     $('#selName').AutoComplete({'data': lb_keHus, 'paramName': 'selKeHu'});
@@ -40,7 +51,7 @@ function jxLvXing(json) {
         if(item.state === -1){
             classStr = ' class="danger"';
         }
-        var trStr = '<tr'+classStr+'><td>' + item.mc + '</td><td>' + item.dm + '</td><td>' + item.lxr + '</td><td>' + item.lxdh + '</td><td>'
+        var trStr = '<tr'+classStr+'><td>' + item.khmc + '</td><td>' + item.sfz + '</td><td>' + item.dh + '</td><td>' + item.ctsj + '</td><td>' + item.ctxl + '</td><td>' + item.a01mc + '</td><td>'
                 + '<button class="btn btn-info btn-xs icon-edit" onclick="editLvXing(' + index + ' );" style="padding-top: 4px;padding-bottom: 3px;"></button>&nbsp;'
                 + '<button class="btn btn-danger btn-xs icon-remove" onclick="deleteLvXing(' + index + ' );" style="padding-top: 4px;padding-bottom: 3px;"></button></td></tr>';
         $("#data_table_body").append(trStr);
@@ -51,10 +62,7 @@ function selectLvXing() {
     var lvXing = {};
     var tj = {"pageSize": 20, "currentPage": 1};
     if ($("#selName").val() !== "") {
-        lvXing.mc = $("#selName").val();
-    }
-    if ($("#selState").val() !== '' && $("#selState").val() !== "-9") {
-        lvXing.state = $("#selState").val();
+        lvXing.khmc = $("#selName").val();
     }
     tj.paramters = lvXing;
     var options = {};
@@ -73,7 +81,7 @@ function addLvXing() {
     $("#inpDh").val("");
     $("#inpCtsj").val("");
     $("#inpCtxl").val("");
-    $("#inpCtlx").val("");
+    $("#inpCtxz").val("");
     $("#inpCtdjs").val("");
     $("#inpCtfy").val("0");
     $("#inpCtlr").val("0");
@@ -98,7 +106,7 @@ function editLvXing(index) {
     $("#inpDh").val(lvXing.dh);
     $("#inpCtsj").val(lvXing.ctsj);
     $("#inpCtxl").val(lvXing.ctxl);
-    $("#inpCtlx").val(lvXing.ctlx);
+    $("#inpCtxz").val(lvXing.ctxz);
     $("#inpCtdjs").val(lvXing.ctdjs);
     $("#inpCtfy").val(lvXing.ctfy);
     $("#inpCtlr").val(lvXing.ctlr);
@@ -111,6 +119,24 @@ function editLvXing(index) {
 
 function saveLvXing() {
     var lvXing = {};
+    if($("#inpMc").val() === ""){
+        return alert("请输入客户名称！")
+    }
+    if($("#inpSfz").val() === ""){
+        return alert("请输入客户身份证！")
+    }
+    if($("#inpDh").val() === ""){
+        return alert("请输入客户电话！")
+    }
+    if($("#inpCtxl").val() === ""){
+        return alert("请输入参团线路！")
+    }
+    if($("#inpA01").val() === ""){
+        return alert("请输入负责人！")
+    }
+    if($("#inpCtfy").val() === ""){
+        return alert("请输入参团费用！")
+    }
     var url = "";
     if (optFlag === 2) {
         if (lvXings[editIndex] === undefined) {
@@ -126,11 +152,14 @@ function saveLvXing() {
     lvXing.dh = $("#inpDh").val();
     lvXing.ctsj = $("#inpCtsj").val();
     lvXing.ctxl = $("#inpCtxl").val();
-    lvXing.ctlx = $("#inpCtlx").val();
+    lvXing.ctxz = $("#inpCtxz").val();
     lvXing.ctdjs = $("#inpCtdjs").val();
     lvXing.ctfy = $("#inpCtfy").val();
     lvXing.ctlr = $("#inpCtlr").val();
     lvXing.a01mc = $("#inpA01").val();
+    if(editA01 && editA01.mc === $("#inpA01").val()){
+        lvXing.a01_id = editA01.id;
+    }
     lvXing.ctfj = $("#inpCtfj").val();
     lvXing.ctbx = $("#inpCtbx").val();
     lvXing.bz = $("#inpBz").val();
@@ -146,6 +175,7 @@ function saveLvXing() {
         success: function (json) {
             if (json.result === 0) {
                 $("#lvXingModal").modal("hide");
+                initData();
                 selectLvXing();
             } else {
                 alert("保存失败:" + json.msg ? json.msg : "");

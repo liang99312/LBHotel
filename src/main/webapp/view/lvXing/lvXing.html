@@ -12,10 +12,13 @@ and open the template in the editor.
         <link href="/LBTravel/content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
         <link href="/LBTravel/content/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
         <link href="/LBTravel/content/autocomplete/autocomplete.css" rel="stylesheet" />
+        <link href="/LBTravel/content/bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
         <script src="/LBTravel/js/jquery2.js"></script>
         <script src="/LBTravel/js/jquery.form.js"></script>
         <script src="/LBTravel/content/bootstrap/js/bootstrap.min.js"></script>
         <script src="/LBTravel/content/bootstrap/js/bootstrap-paginator.js"></script>
+        <script src="/LBTravel/content/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+        <script src="/LBTravel/content/bootstrap/js/bootstrap-datetimepicker.zh-CN.js"></script>
         <script src="/LBTravel/content/autocomplete/autocomplete.js"></script>
         <script src="/LBTravel/view/common/common.js"></script>
         <script src="/LBTravel/view/lvXing/lvXing.js"></script>
@@ -25,12 +28,6 @@ and open the template in the editor.
             <div style="width: 100%">
                 <div style="width: 100%;float:left; padding-top: 5px;">
                     <span>&nbsp;姓名：</span><input id="selName" type="text" />
-                    <span>&nbsp;状态：</span>
-                    <select id="selState" style="width: 100px; height: 26px;line-height: 26px;">
-                        <option value="-9" selected = "selected">全部</option>
-                        <option value="0">有效</option>
-                        <option value="-1">无效</option>
-                    </select>
                     <button type="button" class="btn btn-primary btn-sm" onclick="selectLvXing();" style="margin-left: 2px;">查找</button>
                 </div>
                 <div style="width: 100%;float:left; padding-top: 5px;">
@@ -41,12 +38,12 @@ and open the template in the editor.
                 <table id="data_table" class="table table-hover">
                     <thead>
                     <tr>
-                        <th style="width:18%">姓名</th>
-                        <th style="width:18%">身份证</th>
-                        <th style="width:18%">电话</th>
-                        <th style="width:18%">参团时间</th>
-                        <th style="width:18%">参团线路</th>
-                        <th style="width:18%">负责人</th>
+                        <th style="width:10%">姓名</th>
+                        <th style="width:15%">身份证</th>
+                        <th style="width:12%">电话</th>
+                        <th style="width:12%">参团时间</th>
+                        <th style="width:15%">参团线路</th>
+                        <th style="width:10%">负责人</th>
                         <th>操作</th>
                     </tr>
                     </thead>
@@ -74,45 +71,40 @@ and open the template in the editor.
                             <div class="form-group">
                                 <label for="inpSfz">身&ensp;份&ensp;证：</label>
                                 <input type="text" id="inpSfz" />
-                            </div>
-                            <div class="form-group">
-                                <label for="inpDh">电话：</label>
+                                
+                                <label for="inpDh">电&ensp;&ensp;&ensp;&ensp;话：</label>
                                 <input type="text" id="inpDh" />
                             </div>
                             <div class="form-group">
                                 <label for="inpCtsj">参团时间：</label>
                                 <input type="text" id="inpCtsj" />
-                            </div>
-                            <div class="form-group">
+                                
                                 <label for="inpCtxl">参团线路：</label>
                                 <input type="text" id="inpCtxl" />
                             </div>
                             <div class="form-group">
-                                <label for="inpCtlx">性质：</label>
-                                <input type="text" id="inpCtlx" />
-                            </div>
-                            <div class="form-group">
-                                <label for="inpCtdjs">地接社：</label>
+                                <label for="inpCtxz">性&ensp;&ensp;&ensp;&ensp;质：</label>
+                                <input type="text" id="inpCtxz" />
+                                
+                                <label for="inpCtdjs">地&ensp;接&ensp;社：</label>
                                 <input type="text" id="inpCtdjs" />
                             </div>
                             <div class="form-group">
-                                <label for="inpCtfy">团费：</label>
+                                <label for="inpCtfy">团&ensp;&ensp;&ensp;&ensp;费：</label>
                                 <input type="text" id="inpCtfy" />
-                            </div>
-                            <div class="form-group">
-                                <label for="inpCtlr">利润：</label>
+                                
+                                <label for="inpCtlr">利&ensp;&ensp;&ensp;&ensp;润：</label>
                                 <input type="text" id="inpCtlr" />
                             </div>
                             <div class="form-group">
-                                <label for="inpA01">负责人：</label>
+                                <label for="inpA01">负&ensp;责&ensp;人：</label>
                                 <input type="text" id="inpA01" />
-                            </div>
-                            <div class="form-group">
-                                <label for="inpCtfj">返佣：</label>
+                                
+                                <label for="inpCtfj">返&ensp;&ensp;&ensp;&ensp;佣：</label>
                                 <input type="text" id="inpCtfj" />
                             </div>
                             <div class="form-group">
-                                <label for="inpCtbx">保险：</label>
+                                <label for="inpCtbx">保&ensp;&ensp;&ensp;&ensp;险：</label>
                                 <input type="text" id="inpCtbx" />
                             </div>
                             <div class="form-group">

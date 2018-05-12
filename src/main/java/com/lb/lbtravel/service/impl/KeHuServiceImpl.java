@@ -58,7 +58,7 @@ public class KeHuServiceImpl implements KeHuService {
 
     @Override
     public int queryRows(HashMap map) {
-        String sql = "select (1) from KeHu where 1=1";
+        String sql = "select count(1) from KeHu where 1=1";
         if (map.containsKey("mc")) {
             sql += " and mc like '%" + map.get("mc") + "%'";
         }
@@ -70,7 +70,7 @@ public class KeHuServiceImpl implements KeHuService {
 
     @Override
     public List<KeHu> queryKeHusByPage(HashMap map) {
-        String hql = "from KeHu where where 1=1";
+        String hql = "from KeHu where 1=1";
         if (map.containsKey("mc")) {
             hql += " and mc like '%" + map.get("mc") + "%'";
         }
