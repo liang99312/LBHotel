@@ -39,6 +39,14 @@ public class LvXingController extends BaseController {
         }
         return "lvXing/lvXing";
     }
+    
+    @RequestMapping("goTongJi.do")
+    public String goTongJi() {
+        if (!existsUser()) {
+            return "../index";
+        }
+        return "tongJi/tongJi";
+    }
 
     @RequestMapping(value = "saveLvXing.do", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     @ResponseBody
@@ -107,6 +115,24 @@ public class LvXingController extends BaseController {
             LvXing lvXing = lvXingServiceImpl.getLvXingById(id);
             map.put("result", 0);
             map.put("lvXing", lvXing);
+        } catch (Exception e) {
+            map.put("result", -1);
+            map.put("msg", e.getMessage());
+        }
+        return map;
+    }
+    
+    @RequestMapping(value = "tongJiLvXing.do", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    @ResponseBody
+    public Map<String, Object> tongJiLvXing(@RequestBody LvXing model) {
+        if (!existsUser()) {
+            return notLoginResult();
+        }
+        Map<String, Object> map = new HashMap<String, Object>();
+        try {
+            List<LvXing> list = lvXingServiceImpl.tongJiLvXing(model);
+            map.put("result", 0);
+            map.put("data", list);
         } catch (Exception e) {
             map.put("result", -1);
             map.put("msg", e.getMessage());

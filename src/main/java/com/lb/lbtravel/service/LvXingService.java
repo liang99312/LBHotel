@@ -18,6 +18,8 @@ import java.util.List;
 public interface LvXingService {
 
     public LvXing getLvXingById(Integer id);
+    
+    public List<LvXing> tongJiLvXing(LvXing lvXing);
         
     public boolean updateLvXing(LvXing lvXing);
     

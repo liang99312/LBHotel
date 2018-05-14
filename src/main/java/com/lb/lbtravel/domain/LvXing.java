@@ -31,6 +31,7 @@ public class LvXing {
     private String a01mc;
     private String bz;
     private Integer state = 0;
+    private transient String sjq,sjz;
 
     public LvXing() {
     }
@@ -169,6 +170,22 @@ public class LvXing {
 
     public void setState(Integer state) {
         this.state = state;
+    }
+
+    public String getSjq() {
+        return sjq;
+    }
+
+    public void setSjq(String sjq) {
+        this.sjq = sjq;
+    }
+
+    public String getSjz() {
+        return sjz;
+    }
+
+    public void setSjz(String sjz) {
+        this.sjz = sjz;
     }
 
     @Override
