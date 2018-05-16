@@ -45,7 +45,7 @@ function jxTongJi(list) {
         zbx = zbx + item.ctbx;
     }
     var ztrStr = '<tr style="background:#c1fffc"><td>合计：</td><td>' + js + '条</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>' + zfy
-            + '</td><td>' + zlr + '</td><td>' + item.a01mc + '</td><td>' + zyj + '</td><td>' + zbx + '</td><td>&nbsp;</td><td></tr>';
+            + '</td><td>' + zlr + '</td><td>&nbsp;</td><td>' + zyj + '</td><td>' + zbx + '</td><td>&nbsp;</td><td></tr>';
     $("#data_table_body").append(ztrStr);
 }
 
